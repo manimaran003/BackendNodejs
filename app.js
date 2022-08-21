@@ -5,7 +5,7 @@ const PatientRouter=require('./routes/PatientRoutes')
 const app=express()
 const cors = require('cors');
 const corsOptions ={
-    origin:'http://localhost:3000', 
+    origin:'https://abc-hospital-demo.vercel.app', 
     credentials:true,          
     optionSuccessStatus:200
 }
