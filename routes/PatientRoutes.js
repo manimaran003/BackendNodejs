@@ -1,0 +1,10 @@
+const express=require('express')
+const {AddPatientController,GetPatientController,DeletePatientController,uploadPatientPhoto,GetPatientById,UpdatePatientById}=require('../Controllers/PatientController')
+const {ProtectedRoute}=require("../Controllers/userContoller")
+const router=express.Router()
+router.route("/patientAdd").post(ProtectedRoute,uploadPatientPhoto,AddPatientController)
+router.route("/patientGet").get(ProtectedRoute,GetPatientController)
+router.route("/patientDelete/:id").delete(ProtectedRoute,DeletePatientController)
+router.route("/patientFind/:id").patch(ProtectedRoute,GetPatientById)
+router.route("/patientUpdate/:id").patch(ProtectedRoute,UpdatePatientById)
+module.exports=router
